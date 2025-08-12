@@ -8,9 +8,15 @@
 <body>
     <h1>This is a heading</h1>
     <p id='button_text'>Do not click the button</p>
-    <button type="button" onclick='document.getElementById("button_text").innerHTML = "You are obstinate"'> This is the
-        button that you should not click</button>
-
+    <button type="button" onclick='
+        if (document.getElementById("button_text").innerHTML === "Do not click the button"){
+            document.getElementById("button_text").innerHTML = "You are obstinate"    
+        } else {
+            document.getElementById("button_text").innerHTML = "Do not click the button"
+        }
+        
+        '> This is the button that you should not click
+    </button>
 </body>
 
 
