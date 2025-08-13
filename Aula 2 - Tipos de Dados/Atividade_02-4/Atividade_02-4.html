@@ -1,0 +1,29 @@
+<!---
+Utilizando o arquivo Atividade_02-4.html como base, insira, na área reservada para o código JavaScript, um código que, obrigatoriamente, faça uso de uma variável contadora de linhas para que a página html final tenha a seguinte exibição no seu navegador.
+-->
+
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Programa&ccedil;&atilde;o Estruturada - Aula 02</title>
+    </head>
+    <body>
+        <noscript>Seu navegador n&atilde;o suporta JavaScript ou ele est&aacute; desabilitado.</noscript>
+
+        <h1>Exerc&iacute;cio</h1>
+
+        <h2>Atividade 02-4</h2>
+
+        <p id="minhaResposta"></p>
+
+        <script>
+        var resposta = "";
+        
+        for (let i = 1; i <= 5; i++){
+            resposta += "Esta é a linha " + i + "<br>";   
+        }
+        
+        document.getElementById("minhaResposta").innerHTML = resposta;
+        </script>
+    </body>
+</html>

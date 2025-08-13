@@ -1,0 +1,51 @@
+<!---
+Utilizando o arquivo Atividade_02-2.html como base, insira, na área reservada para o código JavaScript, um código que escreva no campo minhaResposta os tipos de cada uma das expressões abaixo, um em cada linha. Não se preocupe se você não conhece algumas dessas expressões. Você as conhecerá ao longo da disciplina. Nesta atividade, concentre-se apenas em conseguir descobrir o seu tipo. Note também que nesta questão está sendo exigida a exibição com quebra de linhas. Para isso, você poderá inserir no texto resultante a tag html
+de quebra de linhas.
+
+--->
+
+<html >
+    <head>
+        <meta charset="UTF-8" />
+        <title>Programação Estruturada - Aula 02</title>
+    </head>
+    <body>
+        <noscript>Seu navegador não suporta JavaScript ou ele está desabilitado.</noscript>
+
+        <h1>Exercício</h1>
+
+        <h2>Atividade 02-2</h2>
+
+        <p id="minhaResposta"></p>
+
+        <script>
+        var tipos = [];
+
+        tipos.push(typeof 0)
+        tipos.push(typeof 3.14)
+        tipos.push(typeof Infinity)
+        tipos.push(typeof NaN)
+        tipos.push(typeof true)
+        tipos.push(typeof (4 > 1))
+        tipos.push(typeof "texto")
+        tipos.push(typeof ("É tetra " + 1994))
+        tipos.push(typeof Symbol("id"))
+        tipos.push(typeof Date)
+        tipos.push(typeof String)
+        tipos.push(typeof [1,2,3,4])
+        tipos.push(typeof null)
+        tipos.push(typeof undefined)
+        tipos.push(typeof alert)
+
+        var resposta = "";
+        
+        for (let i = 0; i < tipos.length; i++){
+            resposta += tipos[i] + "<br>";
+        }
+        
+        console.log(resposta);
+
+        document.getElementById("minhaResposta").innerHTML = resposta;
+        </script>
+    </body>
+</html>
