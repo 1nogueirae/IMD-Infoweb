@@ -1,7 +1,5 @@
 # IMD_infoWEB-ProgramacaoEstruturada
 
-# IMD_infoWEB-ProgramacaoEstruturada
-
 Este repositório contém as resoluções de exercícios e exemplos dos materiais de aula da disciplina de **Programação Estruturada** do curso técnico em **Informática para Internet** no **Instituto Metrópole Digital (IMD)** da UFRN.
 
 ## 📚 Estrutura do Repositório
