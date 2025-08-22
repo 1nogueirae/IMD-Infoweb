@@ -1,53 +1,50 @@
-# IMD_infoWEB-ProgramacaoEstruturada
 
-Este repositório contém as resoluções de exercícios e exemplos dos materiais de aula da disciplina de **Programação Estruturada** do curso técnico em **Informática para Internet** no **Instituto Metrópole Digital (IMD)** da UFRN.
+# IMD_infoWEB-ProgramacaoEstruturada 🚀💻
 
-## 📚 Estrutura do Repositório
+Este repositório reúne conteúdos de programação estruturada com foco em JavaScript, HTML e CSS. O objetivo é fornecer material de apoio para estudos e práticas de desenvolvimento web e lógica de programação.
 
-  - Botão interativo que altera texto dinamicamente
-  - Calculadora simples que soma dois números
+## 📁 Estrutura
 
-### Aula 2 - Tipos de Dados
-  - Declaração de múltiplas variáveis numéricas e textuais
-  - Concatenação para formar mensagem específica
-  - Uso do operador `typeof` para diferentes expressões
-  - Exibição dos tipos com quebras de linha
-  - Uso de template literals para formatação
-  - Inserção de tags HTML para quebra de linha
-  - Implementação de loop `for`
-  - Uso de variável contadora para gerar linhas numeradas
-### Aula 1 - Introdução à Programação Estruturada e JavaScript
+Os arquivos estão organizados em pastas, contendo exemplos e códigos para consulta e aprendizado. Não há referência direta a aulas, atividades ou exercícios específicos.
 
-- **HTML5**: Estruturação das páginas web
+## 🛠️ Tecnologias
 
-### Fundamentos de JavaScript
-- Sequência de instruções
-- Estruturas de repetição
-## 🎯 Objetivos de Aprendizagem
+- 🌐 HTML5
+- 📜 JavaScript
+- 🎨 CSS
 
-Cada atividade foi desenvolvida para consolidar conhecimentos específicos:
+## 📚 Como usar
 
-1. **Interação básica**: Eventos e manipulação de elementos HTML
-2. **Variáveis e tipos**: Compreensão dos tipos de dados em JavaScript
-3. **Operações**: Cálculos matemáticos e manipulação de strings
-4. **Estruturas de controle**: Implementação de loops e contadores
-5. **Formatação**: Uso adequado de HTML dentro do JavaScript
-
-## 🚀 Como Executar
-
-2. Abra qualquer arquivo `.html` em um navegador web
-3. Os resultados serão exibidos automaticamente na página
-1. Clone o repositório ou baixe os arquivos
-
-## 📝 Observações
-
-- Todos os exercícios incluem comentários explicativos
-- As soluções seguem as especificações exatas dos enunciados
-- Código validado para funcionar em navegadores modernos
-- Estrutura organizada por aulas e atividades para fácil navegação
+Basta clonar o repositório, abrir os arquivos HTML em um navegador web 🖥️ e explorar os conteúdos disponíveis. Os arquivos JavaScript e CSS podem ser editados livremente para estudo ou personalização.
 
 ---
 
-**Curso**: Técnico em Informática para Internet  
-**Instituição**: Instituto Metrópole Digital (IMD) - UFRN  
-**Disciplina**: Programação
+**Autor:** 1nogueirae
+**Disciplina:** Programação Estruturada
+**Instituição:** UFRN
+
+---
+
+# IMD_infoWEB-ProgramacaoEstruturada (English) 🚀💻
+
+This repository gathers structured programming content focused on JavaScript, HTML, and CSS. Its purpose is to provide support material for web development studies and programming logic practice.
+
+## 📁 Structure
+
+Files are organized in folders, containing examples and code for reference and learning. There are no direct references to specific lessons, activities, or exercises.
+
+## 🛠️ Technologies
+
+- 🌐 HTML5
+- 📜 JavaScript
+- 🎨 CSS
+
+## 📚 How to use
+
+Simply clone the repository, open the HTML files in a web browser 🖥️, and explore the available content. JavaScript and CSS files can be freely edited for study or customization.
+
+---
+
+**Author:** 1nogueirae
+**Subject:** Structured Programming
+**Institution:** UFRN
