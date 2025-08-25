@@ -11,7 +11,7 @@ function pitagoras() {
     }
 
     console.log(square(h))
-    console.log(square(c1) + square(c2))
+    console.log(square(c1) + square(c2))    
 
 
 }
