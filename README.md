@@ -1,50 +1,83 @@
-
 # IMD_infoWEB-ProgramacaoEstruturada 🚀💻
 
-Este repositório reúne conteúdos de programação estruturada com foco em JavaScript, HTML e CSS. O objetivo é fornecer material de apoio para estudos e práticas de desenvolvimento web e lógica de programação.
+Este repositório reúne conteúdos de **Programação Estruturada** com foco em JavaScript, HTML e CSS, organizados por aulas e atividades práticas. O objetivo é apoiar o estudo de lógica de programação e desenvolvimento web, com exemplos, exercícios e explicações.
 
 ## 📁 Estrutura
 
-Os arquivos estão organizados em pastas, contendo exemplos e códigos para consulta e aprendizado. Não há referência direta a aulas, atividades ou exercícios específicos.
+A estrutura está dividida por aulas temáticas, cada uma contendo exemplos e atividades:
 
-## 🛠️ Tecnologias
+- **Aula 1:** Introdução à Programação Estruturada e JavaScript
+- **Aula 2:** Tipos de Dados
+- **Aula 3:** Variáveis e Constantes
+- **Aula 4:** Funções
+- **Aula 5:** Depuração
 
-- 🌐 HTML5
-- 📜 JavaScript
-- 🎨 CSS
+Cada pasta possui arquivos HTML e JavaScript para consulta, execução e prática.
+
+## 🛠️ Tecnologias Utilizadas
+
+- 🌐 **HTML5** — Estrutura das páginas
+- 📜 **JavaScript** — Lógica e interatividade
+- 🎨 **CSS** — Estilização (quando aplicável)
 
 ## 📚 Como usar
 
-Basta clonar o repositório, abrir os arquivos HTML em um navegador web 🖥️ e explorar os conteúdos disponíveis. Os arquivos JavaScript e CSS podem ser editados livremente para estudo ou personalização.
+1. Clone o repositório.
+2. Abra os arquivos HTML em seu navegador web 🖥️.
+3. Explore os exemplos e atividades.
+4. Edite os arquivos JavaScript e CSS para praticar e personalizar.
+
+## 📌 Observações
+
+- Os arquivos estão organizados por aulas e atividades, facilitando o acompanhamento dos conteúdos.
+- Recomenda-se abrir o arquivo `index.html` para navegar pelo portfólio de estudos.
+- Não há dependências externas; basta um navegador moderno.
 
 ---
 
-**Autor:** 1nogueirae
-**Disciplina:** Programação Estruturada
+**Autor:** Emanuel Nogueira (1nogueirae)  
+**Disciplina:** Programação Estruturada  
 **Instituição:** UFRN
 
 ---
 
 # IMD_infoWEB-ProgramacaoEstruturada (English) 🚀💻
 
-This repository gathers structured programming content focused on JavaScript, HTML, and CSS. Its purpose is to provide support material for web development studies and programming logic practice.
+This repository gathers **Structured Programming** content focused on JavaScript, HTML, and CSS, organized by lessons and practical activities. Its purpose is to support web development and programming logic studies with examples, exercises, and explanations.
 
 ## 📁 Structure
 
-Files are organized in folders, containing examples and code for reference and learning. There are no direct references to specific lessons, activities, or exercises.
+Content is divided by thematic lessons:
+
+- **Lesson 1:** Introduction to Structured Programming and JavaScript
+- **Lesson 2:** Data Types
+- **Lesson 3:** Variables and Constants
+- **Lesson 4:** Functions
+- **Lesson 5:** Debugging
+
+Each folder contains HTML and JavaScript files for reference and practice.
 
 ## 🛠️ Technologies
 
-- 🌐 HTML5
-- 📜 JavaScript
-- 🎨 CSS
+- 🌐 **HTML5** — Page structure
+- 📜 **JavaScript** — Logic and interactivity
+- 🎨 **CSS** — Styling (when applicable)
 
 ## 📚 How to use
 
-Simply clone the repository, open the HTML files in a web browser 🖥️, and explore the available content. JavaScript and CSS files can be freely edited for study or customization.
+1. Clone the repository.
+2. Open the HTML files in your web browser 🖥️.
+3. Explore the examples and activities.
+4. Edit JavaScript and CSS files for study and customization.
+
+## 📌 Notes
+
+- Files are organized by lessons and activities for easy navigation.
+- It is recommended to open `index.html` to browse the study portfolio.
+- No external dependencies; just use a modern browser.
 
 ---
 
-**Author:** 1nogueirae
-**Subject:** Structured Programming
-**Institution:** UFRN
+**Author:** Emanuel Nogueira (1nogueirae)  
+**Subject:** Structured Programming  
+**Institution:**
