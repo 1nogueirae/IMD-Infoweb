@@ -11,6 +11,7 @@ A estrutura está dividida por aulas temáticas, cada uma contendo exemplos e at
 - **Aula 3:** Variáveis e Constantes
 - **Aula 4:** Funções
 - **Aula 5:** Depuração
+- **Aula 6:** Operadores JavaScript Aritmética
 
 Cada pasta possui arquivos HTML e JavaScript para consulta, execução e prática.
 
@@ -54,6 +55,7 @@ Content is divided by thematic lessons:
 - **Lesson 3:** Variables and Constants
 - **Lesson 4:** Functions
 - **Lesson 5:** Debugging
+- **Lesson 6:** JavaScript Arithmetic Operators
 
 Each folder contains HTML and JavaScript files for reference and practice.
 
@@ -80,4 +82,4 @@ Each folder contains HTML and JavaScript files for reference and practice.
 
 **Author:** Emanuel Nogueira (1nogueirae)  
 **Subject:** Structured Programming  
-**Institution:**
+**Institution:** UFRN
