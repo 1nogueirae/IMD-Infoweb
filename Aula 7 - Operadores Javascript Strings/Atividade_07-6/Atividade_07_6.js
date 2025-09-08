@@ -1,0 +1,2 @@
+function verificar_minuscula() {
+}
