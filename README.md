@@ -1,3 +1,6 @@
+
+![Última atualização](https://img.shields.io/badge/atualizado-setembro%202025-blue)
+
 # IMD_infoWEB-ProgramacaoEstruturada 🚀💻
 
 Este repositório reúne conteúdos de **Programação Estruturada** com foco em JavaScript, HTML e CSS, organizados por aulas e atividades práticas. O objetivo é apoiar o estudo de lógica de programação e desenvolvimento web, com exemplos, exercícios e explicações.
@@ -12,6 +15,9 @@ A estrutura está dividida por aulas temáticas, cada uma contendo exemplos e at
 - **Aula 4:** Funções
 - **Aula 5:** Depuração
 - **Aula 6:** Operadores JavaScript Aritmética
+- **Aula 7:** Operadores JavaScript Strings
+
+Cada pasta possui arquivos HTML, JavaScript e, quando aplicável, CSS para consulta, execução e prática.
 
 Cada pasta possui arquivos HTML e JavaScript para consulta, execução e prática.
 
@@ -56,6 +62,9 @@ Content is divided by thematic lessons:
 - **Lesson 4:** Functions
 - **Lesson 5:** Debugging
 - **Lesson 6:** JavaScript Arithmetic Operators
+- **Lesson 7:** JavaScript String Operators
+
+Each folder contains HTML, JavaScript, and, when applicable, CSS files for reference and practice.
 
 Each folder contains HTML and JavaScript files for reference and practice.
 
