@@ -16,10 +16,9 @@ A estrutura está dividida por aulas temáticas, cada uma contendo exemplos e at
 - **Aula 5:** Depuração
 - **Aula 6:** Operadores JavaScript Aritmética
 - **Aula 7:** Operadores JavaScript Strings
+- **Aula 8:** Operadores JavaScript Datas
 
 Cada pasta possui arquivos HTML, JavaScript e, quando aplicável, CSS para consulta, execução e prática.
-
-Cada pasta possui arquivos HTML e JavaScript para consulta, execução e prática.
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -63,10 +62,9 @@ Content is divided by thematic lessons:
 - **Lesson 5:** Debugging
 - **Lesson 6:** JavaScript Arithmetic Operators
 - **Lesson 7:** JavaScript String Operators
+- **Lesson 8:** JavaScript String Dates
 
 Each folder contains HTML, JavaScript, and, when applicable, CSS files for reference and practice.
-
-Each folder contains HTML and JavaScript files for reference and practice.
 
 ## 🛠️ Technologies
 
