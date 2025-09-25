@@ -17,6 +17,10 @@ A estrutura está dividida por aulas temáticas, cada uma contendo exemplos e at
 - **Aula 6:** Operadores JavaScript Aritmética
 - **Aula 7:** Operadores JavaScript Strings
 - **Aula 8:** Operadores JavaScript Datas
+- **Aula 9:** Comandos de Seleção
+- **Aula 10:** Comandos de Iteração
+- **Aula 11:** Arrays Introdução, Acesso e Métodos
+- **Aula 12:** Arrays Ordenação, Iteração e Matrizes
 
 Cada pasta possui arquivos HTML, JavaScript e, quando aplicável, CSS para consulta, execução e prática.
 
@@ -62,7 +66,11 @@ Content is divided by thematic lessons:
 - **Lesson 5:** Debugging
 - **Lesson 6:** JavaScript Arithmetic Operators
 - **Lesson 7:** JavaScript String Operators
-- **Lesson 8:** JavaScript String Dates
+- **Lesson 8:** JavaScript Date Operators
+- **Lesson 9:** Selection Commands
+- **Lesson 10:** Iteration Commands
+- **Lesson 11:** Arrays Introduction, Access and Methods
+- **Lesson 12:** Arrays Sorting, Iteration and Matrices
 
 Each folder contains HTML, JavaScript, and, when applicable, CSS files for reference and practice.
 
