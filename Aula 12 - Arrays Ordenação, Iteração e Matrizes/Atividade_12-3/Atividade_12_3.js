@@ -2,9 +2,26 @@ var maiusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var minusculas = 'abcdefghijklmnopqrstuvwxyz';
 
 function inverter() {
-    var str = document.getElementById("entrada").value + "";
+    var str = getString("entrada");
+    var strInvertida = "";
+    let resultado = ""
+    if (str !== "") {
+        for (let i = 0; i < str.length; i++) {
 
-    var resultado = "";
-  
-    document.getElementById("resultado").innerHTML = resultado;
+            if (minusculas.includes(str[i])) {
+                strInvertida += str[i].toUpperCase();
+            } else if (maiusculas.includes(str[i])) {
+                strInvertida += str[i].toLowerCase();
+            } else {
+                strInvertida += str[i];
+            }
+        }
+        resultado = strInvertida
+    } else {
+        resultado = `Insira sua frase para vê-la com as letras trocadas.`
+    }
+
+
+
+    giveValue(resultado, "resultado");
 }

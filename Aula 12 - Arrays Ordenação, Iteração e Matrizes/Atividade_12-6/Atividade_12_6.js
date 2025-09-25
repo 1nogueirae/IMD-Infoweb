@@ -2,8 +2,8 @@ var n = 0;
 var m = 0;
 
 function iniciar() {
-    n = Number(document.getElementById("number_N").value);
-    m = Number(document.getElementById("number_M").value);
+    n = getNumber("number_N");
+    m = getNumber("number_M");
 
     var resposta = "";
     if (n > 0 && m > 0) {
@@ -19,13 +19,27 @@ function iniciar() {
     } else {
         resposta = "Favor inserir valores positivos para as dimensões N e M."
     }
-    document.getElementById("resposta").innerHTML = resposta;
+    giveValue(resposta, "resposta");
 }
 
 function somar(matriz1, matriz2){
+    var matrizSoma = [];
+    
+    for (var i = 0; i < matriz1.length; i++) {
+        var linhaSoma = [];
+        
+        for (var j = 0; j < matriz1[i].length; j++) {
+            // Si,j = Ai,j + Bi,j
+            var elementoSoma = matriz1[i][j] + matriz2[i][j];
+            linhaSoma.push(elementoSoma);
+        }
+        
+        matrizSoma.push(linhaSoma);
+    }
+    
+    return matrizSoma;
 }
 
-// Função para Inserir Matriz
 function inserir() {
     var matriz = [];
     for (var i = 0; i < n; i++) {
@@ -50,7 +64,6 @@ function invalido(num){
     return isNaN(num) || num < -999 || num > 1000;
 }
 
-// Função para Exibir Matriz
 function exibirMatriz(matriz){
     var resposta = "[<br>";
     for (var i = 0; i < matriz.length; i++) {

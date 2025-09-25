@@ -1,39 +1,33 @@
-// Primeiramente, entenda o código já existente
-
 var array = [];
 var ordenado = [];
 exibir();
 
 function inserir() {
-    var x = Number(document.getElementById("entrada").value);
+    var x = getNumber("entrada");
     array.push(x);
     ordenado.push(x);
+    ordenado.sort((a, b) => a - b);
     exibir();
-    maior();
 }
 
 function limpar() {
     array = [];
     ordenado = [];
     exibir();
-    maior();
+    giveValue("", "resultado");
 }
 
-function exibir(){
-    var texto = "Array = [" + array + "] <br>";
-    document.getElementById("array").innerHTML = texto;
+function exibir() {
+    var texto = `Array = [${array}]<br>`
+    giveValue(texto, "array")
 }
 
 function maior() {
     var resultado = "";
-    var x = Number(document.getElementById("ordem").value);
+    var x = getNumber("ordem");
 
-    // Complete aqui
+    resultado = ordenado[x-1];
 
     exibir();
-    document.getElementById("resultado").innerHTML = resultado;
-}
-
-function comparar(a, b){
-    return a - b;
+    giveValue(resultado, "resultado")
 }
