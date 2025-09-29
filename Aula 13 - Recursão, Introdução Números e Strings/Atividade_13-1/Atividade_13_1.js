@@ -3,12 +3,12 @@ function sequenciaFib() {
     var resultado = "";
 
     document.getElementById("resultado").innerHTML = resultado;
+    
 }
 
 function fibonacci(n) {
     var retorno = "";
 
-    // Condição de TERMINAÇÃO
     if (n < 0) {
         retorno = "ERRO";
 

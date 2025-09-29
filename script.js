@@ -13,7 +13,6 @@ function giveValue (value, field){
 //
 
 // Funções novas que fazem a mesma coisa, mas tem uma sintaxe mais intuitiva.
-
 function getValue(field) {
     return document.getElementById(field).value;
 }
@@ -21,7 +20,6 @@ function getValue(field) {
 function setValue(value, field){
     document.getElementById(field).innerHTML = value;
 }
-
 //
 
 function getDateValue (field) {
