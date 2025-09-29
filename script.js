@@ -40,3 +40,8 @@ function fullActualDate(field) {
     
     giveValue(actualDate, field);
 }
+
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    section.scrollIntoView({ behavior: "smooth" });
+}

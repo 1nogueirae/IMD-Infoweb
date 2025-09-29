@@ -1,45 +1,117 @@
-body {
-    background-color: rgb(41, 41, 41);
-    color: white;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    line-height: 1.6;
+/* Reset e configurações globais */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    color: #ffffff;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-bottom: 80px; /* Espaço para o footer fixo */
+}
+
+/* Header melhorado */
 #introduction {
-    margin: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: rgba(0, 139, 139, 0.1);
+    background: linear-gradient(135deg, rgba(0, 139, 139, 0.1), rgba(32, 178, 170, 0.05));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 139, 139, 0.2);
+    border-radius: 16px;
+    margin: 30px auto;
+    padding: 40px;
+    max-width: 1200px;
+    box-shadow: 0 8px 32px rgba(0, 139, 139, 0.1);
+}
+
+/* Menu de navegação */
+#menu {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(135deg, rgba(0, 139, 139, 0.95), rgba(32, 178, 170, 0.95));
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    z-index: 1000;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 139, 139, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 139, 139, 0.2);
+}
+
+#menu button {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 8px 16px;
+    margin: 4px 6px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+#menu button:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 139, 139, 0.3);
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgb(0, 139, 139);
+    margin-top: 20px;
+    font-size: 0.9rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 -2px 12px rgba(0,139,139,0.25);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    right: 0;
 }
 
 .main-title {
-    background-color: darkcyan;
-    padding: 15px;
-    border-radius: 8px;
+    background: linear-gradient(135deg, #008b8b, #20b2aa);
+    padding: 20px;
+    border-radius: 12px;
     text-align: center;
-    margin: 0 0 20px 0;
-    font-size: 2rem;
-    font-weight: 600;
+    margin: 0 0 25px 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    box-shadow: 0 4px 20px rgba(0, 139, 139, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .author-info {
-    margin: 15px 0;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border-left: 4px solid #20b2aa;
 }
 
 .author-info p {
-    margin: 5px 0;
+    margin: 8px 0;
+    font-size: 1.1rem;
 }
 
 .author-info a {
-    color: darkcyan;
+    color: #20b2aa;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
 }
 
 .author-info a:hover {
-    text-decoration: underline;
+    color: #40e0d0;
+    border-bottom-color: #40e0d0;
+    text-shadow: 0 0 8px rgba(64, 224, 208, 0.5);
 }
 
 .description {
@@ -97,4 +169,35 @@ section[id^="aula"] a {
 section[id^="aula"] a:hover {
     text-decoration: underline;
     color: #20b2aa;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #introduction {
+        margin: 15px;
+        padding: 20px;
+    }
+    
+    .main-title {
+        font-size: 1.8rem;
+        padding: 15px;
+    }
+    
+    #menu {
+        padding: 10px;
+    }
+    
+    #menu button {
+        padding: 6px 12px;
+        margin: 2px 4px;
+        font-size: 0.8rem;
+    }
+    
+    #content {
+        margin: 15px;
+    }
+    
+    .title {
+        font-size: 1.1rem;
+    }
 }
