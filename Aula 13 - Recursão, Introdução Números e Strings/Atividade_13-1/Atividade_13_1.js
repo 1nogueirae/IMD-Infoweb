@@ -1,9 +1,12 @@
 function sequenciaFib() {
-    var n = Number(document.getElementById("numero").value);
-    var resultado = "";
+    let n = Number(getValue("numero"));
 
-    document.getElementById("resultado").innerHTML = resultado;
-    
+    // let fibo = fibonacci(n);
+    let fibo = fibonacciIterativo(n);
+
+    var resultado = `A sequência de Fibonacci de ${n} é: ${fibo}`;
+
+    setValue(resultado, "resultado");
 }
 
 function fibonacci(n) {
@@ -26,4 +29,22 @@ function fibonacci(n) {
     }
 
     return retorno;
+}
+
+function fibonacciIterativo(n) {
+    let a = 0, b = 1, temp;
+    if (n < 0) {
+        return "ERRO";
+    } else if (n == 0) {
+        return 0;
+    } else if (n == 1) {
+        return 1;
+    } else {
+        for (let i = 2; i <= n; i++) {
+            temp = a + b;
+            a = b;
+            b = temp;
+        }
+        return b;
+    }
 }

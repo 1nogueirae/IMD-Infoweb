@@ -1,5 +1,5 @@
 function exibir() {
-    var texto = document.getElementById("texto").value;
+    var texto = getString("texto");
     var resultado = "";
     
     var palavras = misturar(texto);
@@ -7,8 +7,26 @@ function exibir() {
         resultado = resultado + palavras[i] + "<br>";
     }
 
-    document.getElementById("resultado").innerHTML = resultado;
+    giveValue(resultado, "resultado");
 }
 
 function misturar(texto) {
+    if (texto.length <= 1) {
+        return [texto];
+    }
+    
+    var permutacoes = [];
+    
+    for (var i = 0; i < texto.length; i++) {
+        var caractereAtual = texto[i];
+        var restanteTexto = texto.slice(0, i) + texto.slice(i + 1);
+        
+        var permutacoesRestantes = misturar(restanteTexto);
+        
+        for (var j = 0; j < permutacoesRestantes.length; j++) {
+            permutacoes.push(caractereAtual + permutacoesRestantes[j]);
+        }
+    }
+    
+    return permutacoes;
 }

@@ -1,15 +1,20 @@
 function exibir() {
-    var n = Number(document.getElementById("numero_1").value);
-    var m = Number(document.getElementById("numero_2").value);
+    var n = Number(getValue("numero_1"));
+    var m = Number(getValue("numero_2"));
 
-    if (n > 0 && m > 0){
-        resultado = "O MDC é " + mdc(n,m);
+    if (n > 0 && m > 0) {
+        resultado = "O MDC é " + mdc(n, m);
     } else {
         resultado = "Insira números maiores que zero.";
     }
 
-    document.getElementById("resultado").innerHTML = resultado;
+    setValue(resultado, "resultado");
 }
 
-function mdc(a,b) {
+function mdc(a, b) {
+    if (b === 0) {
+        return a;
+    } else {
+        return mdc(b, a % b);
+    }
 }
