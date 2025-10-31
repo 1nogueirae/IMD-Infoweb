@@ -2,9 +2,13 @@
     "compilerOptions": {
         "target": "es5", // versão do JavaScript
         "outDir": "app/js", // pasta de saída dos arquivos transpilados
-        "noEmitOnError": true, // não gerar arquivos se houver erros
+        "noEmitOnError": true // não gerar arquivos se houver erros
     },
     "include": [
-        "app/ts/**/*" // incluir todos os arquivos na pasta ts
+        "app/ts/**/*", // incluir todos os arquivos na pasta app/ts
+        "ts/**/*" // também incluir arquivos se estiverem em ts/
+    ],
+    "exclude": [
+        "app/js" // excluir a pasta de saída para evitar conflitos
     ]
 }
