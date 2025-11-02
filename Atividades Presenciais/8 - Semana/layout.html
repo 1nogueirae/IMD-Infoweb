@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMD - Layout Flexível Semântico</title>
+    <!-- Incluindo Tailwind CSS para facilitar o styling e responsividade -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "imd-blue": "#005baa",
+              "imd-light": "#f0f4f8",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Estilos básicos para o layout principal */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #e2e8f0; /* Cor de fundo suave */
+      }
+
+      /* O container principal usa flex para organizar cabeçalho, conteúdo e rodapé */
+      .page-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        max-width: 1200px;
+        margin: 0 auto; /* Centraliza o container na tela */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -2px rgba(0, 0, 0, 0.06);
+        border-radius: 0.75rem; /* rounded-xl */
+        overflow: hidden;
+        background-color: white;
+      }
+
+      /* O layout principal do conteúdo (navegação + artigo) usa flex-row */
+      .content-layout {
+        display: flex;
+        flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
+      }
+
+      /* Media query para responsividade em telas menores (celulares) */
+      @media (max-width: 768px) {
+        .content-layout {
+          flex-direction: column; /* Navegação fica em cima do conteúdo */
+        }
+        nav {
+          border-right: none !important;
+          border-bottom: 1px solid #e2e8f0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Container da Página -->
+    <div class="page-container">
+      <!-- A: Tag <header> para o cabeçalho (condição d) -->
+      <header class="bg-imd-blue p-4 text-white">
+        <h1 class="text-3xl font-bold">METRÓPOLE DIGITAL</h1>
+        <p class="text-sm opacity-80">Desenvolvimento Front-end I</p>
+      </header>
+
+      <!-- Content Layout: Usa display flex para organizar a barra lateral e o artigo (condição e) -->
+      <div class="content-layout">
+        <!-- B: Tag semântica <nav> para a navegação (condição a) -->
+        <nav class="w-full md:w-1/4 p-4 bg-gray-100 border-r border-gray-200">
+          <h2 class="text-lg font-semibold mb-2 text-imd-blue">Cidades</h2>
+          <ul>
+            <li>
+              <a
+                href="#"
+                class="block p-2 rounded-md bg-gray-200 text-gray-800 font-medium hover:bg-gray-300"
+                >Londres</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block p-2 rounded-md text-gray-700 hover:bg-gray-200"
+                >Paris</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block p-2 rounded-md text-gray-700 hover:bg-gray-200"
+                >Rio de Janeiro</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- C: Tag <article> para o conteúdo principal (condição c) -->
+        <article class="w-full md:w-3/4 p-6">
+          <h2 class="text-3xl font-bold mb-4 text-gray-800">Londres</h2>
+
+          <!-- Conteúdo de Exemplo (Lorem Ipsum) -->
+          <p class="mb-4 text-gray-700">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+            imperdiet est et lorem posuere malesuada. Sed auctor metus a orci
+            feugiat, ac ultricies est hendrerit. Etiam uma neque, scelerisque
+            sit amet eros non, aliquam tincidunt enim. Praesent sem ante,
+            facilisis nec egestas nec, vehicula viverra mauris. Aenean sagittis
+            lacus at eros sagittis, a consectetur mauris malesuada. Aliquam a
+            urna turpis. Donec posuere augue eget scelerisque viverra. Maecenas
+            bibendum suscipit justo, id dictum purus pretium nec. Phasellus eget
+            arcu turpis.
+          </p>
+
+          <p class="mb-4 text-gray-700">
+            Praesent non viverra enim. Suspendisse potenti. Maecenas ac suscipit
+            justo. Donec vitae dolor vehicula, rhoncus quam eu, venenatis nisi.
+            Cras in porttitor tortor. Vestibulum ut nisi ultricies ligula
+            fringilla porta. Suspendisse orci quam, iaculis sed quam non,
+            iaculis posuere augue. Class aptent taciti sociosqu ad litora
+            torquent per conubia nostra, per inceptos himenaeos. Maecenas
+            tincidunt bibendum nisl nec dignissim. Sed rutrum orci quis mi
+            gravida tincidunt.
+          </p>
+
+          <p class="text-gray-700">
+            Sed sit amet porta turpis. Morbi urna nunc, tincidunt vel vulputate
+            a, egestas in elit. Ut auctor viverra consequat. Vivamus lacinia
+            suscipit erat, luctus blandit est aliquam ut. Donec in pulvinar
+            mauris. In eu velit vel ante auctor lacinia eget ac ipsum. Etiam
+            condimentum metus sed lectus consequat euismod vitae eget neque.
+            Vestibulum nec ligula libero. Curabitur tempus scelerisque ex,
+            feugiat consequat turpis. Nulla luctus massa enim, ac venenatis
+            purus congue vitae. Proin facilisis eleifend dui in elementum.
+            Phasellus est felis, posuere sit amet aliquet vel, malesuada vitae
+            nisl. Nulla molestie posuere dolor, a luctus elit condimentum in.
+          </p>
+        </article>
+      </div>
+      <!-- Fim do content-layout -->
+
+      <!-- D: Tag semântica <footer> para rodapé (condição b) -->
+      <footer class="bg-gray-800 text-white p-3 text-center text-sm mt-auto">
+        <p>www.imd.ufrn.br &copy; 2024</p>
+      </footer>
+    </div>
+    <!-- Fim do page-container -->
+  </body>
+</html>

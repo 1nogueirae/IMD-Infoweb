@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Programação Estruturada</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <section class="about">
+
+        <h2 id="title">Sobre</h2>
+        <p>
+            Este site foi desenvolvido para auxiliar no aprendizado de conceitos básicos de programação estruturada. 
+            Aqui, você pode calcular médias aritméticas e ponderadas, além de identificar o maior e o menor número entre valores informados.
+        </p>
+        <p>
+            Utilize as seções abaixo para inserir os valores desejados e visualizar os resultados instantaneamente.
+        </p>
+    </section>
+
+    <hr>
+
+    <section class="arithmeticAverage">
+
+        <h2 id="title">Média Aritmética</h2>
+
+        N1: <input type="number" id="a1" value="">
+        N2: <input type="number" id="a2" value="">
+
+        <button onclick='executeArithmeticAverage()'>OK</button>
+
+        <p id="arithmeticAverageResult">Insira os valores para ver a média aritmética.</p>
+    </section>
+
+    <hr>
+
+    <section class="weightedAverage">
+        <h2 id="title">Média Ponderada</h2>
+
+        N1: <input type="number" id="b1" value="">
+        N2: <input type="number" id="b2" value="">
+        N3: <input type="number" id="b3" value="">
+
+        <button onclick='executeWeightedAverage()'>OK</button>
+
+        <p id="weightedAverageResult">Insira os valores para ver a média ponderada.</p>
+
+    </section>
+
+    <hr>
+
+    <section class="extremesMaxMin">
+        <h2 id="title">Extremos: Maior e Menor Número</h2>
+
+        N1: <input type="number" id="c1" value="">
+        N2: <input type="number" id="c2" value="">
+        N3: <input type="number" id="c3" value="">
+        N4: <input type="number" id="c4" value="">
+
+        <button onclick='executeExtremes()'>OK</button>
+
+        <p id="extremesResult">Insira os números para descobrir entre eles:<br>Maior e menor.</p>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "outDir": "app/js", // pasta de saída dos arquivos transpilados
+        "noEmitOnError": true, // não gerar arquivos se houver erros
+        "module": "ES6", // usar módulos ES6
+        "target": "ES6" // compilar para ES6
+    },
+    "include": [
+        "app/ts/**/*" // incluir todos os arquivos na pasta ts
+    ]
+}

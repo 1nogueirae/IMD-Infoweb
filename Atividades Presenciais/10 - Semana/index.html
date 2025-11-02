@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador de Caracteres</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">Contador de Caracteres</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <div class="container">
+      <header class="mt-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title text-center">Super Máquina Contadora de Caracteres</h1>
+            <article class="card-text">
+              <p>Esta página permite contar quantas vezes um caractere (ou uma sequência de caracteres) aparece no texto
+                que
+                você inserir. Cole ou digite seu texto no campo "Insira aqui seu texto", informe o caractere desejado em
+                "Caracter procurado" e clique em "Enviar".</p>
+              <p>O resultado exibirá o número de ocorrências encontradas no texto. <span
+                  class="badge bg-info text-dark">Exemplo:</span> para o texto "Banana" e o
+                caractere "a", o resultado será 3.</p>
+            </article>
+          </div>
+        </div>
+      </header>
+
+      <section class="mt-3">
+        <div class="row g-3">
+          <div class="col-md-8">
+            <label class="form-label">Insira aqui seu texto: </label>
+            <textarea class="form-control" id="inputTexto" style="height: 20vh"></textarea>
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label" for="inputCaracter">Caracter procurado:</label>
+            <input type="text" class="form-control" id="inputCaracter" placeholder="Digite o caracter">
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-12 text-end">
+            <button class="btn btn-primary btn-lg" id="submitBtn" onclick="executarExercicio()">Enviar</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="container-result mt-4">
+        <div class="alert alert-secondary" role="alert">
+          <h4 class="alert-heading">Resultado:</h4>
+          <hr>
+          <p id="resultado" class="mb-0">Digite o texto e o caracter para ver seu resultado.</p>
+        </div>
+      </section>
+
+      <footer class="about-author mt-5 mb-4">
+        <div class="card border-primary">
+          <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Sobre o autor</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Emanuel Nogueira é estudante da UFRN de graduação em Ciências e Tecnologias pela UFRN e
+              cursa Informática
+              para Internet no Instituto Metrópole Digital (IMD).</p>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

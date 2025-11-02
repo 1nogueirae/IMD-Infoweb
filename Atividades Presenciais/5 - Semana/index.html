@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Semana 05</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <table class="tabela">
+        <!--Primeira Linha-->
+        <tr>
+            <th rowspan="2">Explicação</th>
+            <th colspan="2">Interativos</th>
+            <th rowspan="2" class="saida">Saída</th>
+        </tr>
+
+        <!--Segunda Linha-->
+        <tr>
+            <th>Entrada</th>
+            <th>Botão</th>
+        </tr>
+
+        <!--Terceira Linha-->
+        <tr>
+            <td>Clique sobre o botão OK para ver a hora atual</td>
+            <td>N/A</td>
+            <td class="acao"><button onclick="horaAtual()">OK</button></td>
+            <td id="horaAtual"></td>
+        </tr>
+
+        <!--Quarta Linha-->
+        <tr>
+            <td>Clique sobre o botão OK para ver a data e hora atual</td>
+            <td>N/A</td>
+            <td class="acao"><button onclick="dataHoraFormatada()">OK</button></td>
+            <td id="horaEDataAtual"></td>
+        </tr>
+
+        <!--Quinta Linha-->
+        <tr>
+            <td>Informe a sua data de nascimento e clique sobre o botão OK para calcular a sua idade</td>
+            <td class="entrada"><input type="date" id="dataNascimento"></td>
+            <td class="acao"><button onclick="calcularIdade()">OK</button></td>
+            <td id="saida2"></td>
+        </tr>
+
+        <!--Sexta Linha-->
+        <tr>
+            <td>Informe o seu nome e clique sobre o botão OK para ver a mensagem</td>
+            <td class="entrada"><input type="text" id="nome"></td>
+            <td class="acao"><button onclick="atualizarMensagem()">OK</button></td>
+            <td id="mensagem"></td>
+        </tr>
+    </table>
+</body>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+ <title>Atividade 1 - Presencial</title>
+</head>
+
+<body>
+
+ <script>
+ function guessThePassword(){
+ 
+ var correctAnswer = "bladeRunner";
+ var userInput = document.getElementById("input").value;
+ 
+ document.getElementById("mensagem").innerText = "A resposta é " + (correctAnswer === userInput);
+ }
+ </script>
+
+ <h1>Teste seu poder de adivinhação<h2/>
+ 
+ <h2>Digite sua tentativa: <input type="text" id ="input"><h2/>
+ 
+ <button onclick="guessThePassword()">Adivinhar</button>
+
+ <p id="mensagem"></p> 
+</body>
+</html>

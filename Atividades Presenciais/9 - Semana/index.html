@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recursividade - Conceitos e Exemplos</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      header {
+        position: relative;
+      }
+
+      header img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .mobile-header-text {
+        display: none;
+      }
+
+      .main-container {
+        display: flex;
+        flex: 1;
+      }
+
+      nav {
+        width: 250px;
+        background-color: #f4f4f4;
+        padding: 20px;
+        border-right: 1px solid #ddd;
+      }
+
+      nav ol {
+        list-style: none;
+      }
+
+      nav li {
+        margin-bottom: 5px;
+        border-bottom: #007bff13 solid 2px;
+      }
+
+      .title-paragraph {
+        border-bottom: #007bff13 solid 2px;
+      }
+
+      nav li a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+
+      nav li a:hover {
+        background-color: #007bff;
+        color: white;
+      }
+
+      article {
+        flex: 1;
+        padding: 20px;
+        text-align: justify;
+      }
+
+      .title-paragraph p::first-letter {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #007bff;
+        float: left;
+        line-height: 1;
+        margin-right: 8px;
+        margin-top: 4px;
+      }
+
+      .title-paragraph {
+        margin-bottom: 30px;
+      }
+
+      .title-paragraph h2 {
+        margin-bottom: 15px;
+        color: #007bff;
+      }
+
+      pre {
+        border-top: 2px solid #007bff;
+        border-bottom: #007bff solid 2px;
+        margin-top: 20px;
+        background-color: #f4f4f4;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-family: "Courier New", monospace;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin-top: auto;
+      }
+
+      @media (max-width: 767px) {
+        header {
+          background-color: #007bff;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        header img {
+          display: none;
+        }
+
+        .mobile-header-text {
+          display: block;
+          color: white;
+          font-weight: bold;
+        }
+
+        .main-container {
+          flex-direction: column;
+        }
+
+        nav {
+          width: 100%;
+          order: 1;
+          padding: 10px;
+          border-right: none;
+          border-bottom: 1px solid #ddd;
+        }
+
+        nav ol {
+          display: block;
+        }
+
+        nav li a {
+          padding: 10px;
+          text-align: left;
+          border-radius: 0;
+        }
+
+        article {
+          order: 2;
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://thumbs.dreamstime.com/b/texto-recursivo-escrito-no-fundo-da-tecnologia-abstrata-do-c%C3%B3digo-de-programa%C3%A7%C3%A3o-desenvolvedor-software-e-script-computador-153538497.jpg"
+        alt="Recursividade - Imagem de fundo no topo da página"
+      />
+      <div class="mobile-header-text">Conteúdos</div>
+    </header>
+
+    <div class="main-container">
+      <nav>
+        <ol>
+          <li><a href="#topico-1">O que é Recursividade?</a></li>
+          <li><a href="#topico-2">Exemplo Prático</a></li>
+          <li><a href="#topico-3">Vantagens e Desvantagens</a></li>
+        </ol>
+      </nav>
+
+      <article>
+        <div class="content">
+          <div class="title-paragraph" id="topico-1">
+            <h2>O que é Recursividade?</h2>
+            <p>
+              Recursividade é um conceito fundamental em programação onde uma
+              função chama a si mesma para resolver um problema. Esse método é
+              extremamente útil para dividir tarefas complexas em partes menores
+              e mais simples de resolver. Um exemplo clássico de recursividade é
+              o cálculo do fatorial de um número, onde a função fatorial chama a
+              si mesma até atingir o caso base. Para que a recursividade
+              funcione corretamente, é fundamental definir um caso base que
+              interrompa as chamadas recursivas, evitando loops infinitos que
+              poderiam travar o programa.
+            </p>
+          </div>
+
+          <div class="title-paragraph" id="topico-2">
+            <h2>Exemplo Prático: Inversão de Números</h2>
+            <p>
+              Uma função recursiva pode ser usada para inverter um número
+              inteiro N. Por exemplo, inverter o número 123 resulta em 321. Veja
+              abaixo como isso pode ser implementado em JavaScript usando
+              recursividade, garantindo que o caso base seja sempre alcançado:
+            </p>
+
+            <pre><code>function inverterNumero(n, resultado = 0) {
+    if (n === 0) {
+        return resultado;
+    } else {
+        return inverterNumero(
+            Math.floor(n / 10), 
+            resultado * 10 + (n % 10)
+        );
+    }
+}
+
+console.log(inverterNumero(123));
+console.log(inverterNumero(456));
+console.log(inverterNumero(789));</code></pre>
+          </div>
+
+          <div class="title-paragraph" id="topico-3">
+            <h2>Vantagens e Desvantagens</h2>
+            <p>
+              Ao utilizar recursividade, podemos simplificar significativamente
+              a resolução de problemas complexos, tornando o código mais
+              legível, elegante e fácil de manter. A recursividade é
+              especialmente útil para trabalhar com estruturas de dados
+              hierárquicas, como árvores e grafos, onde cada elemento pode
+              conter subelementos. No entanto, é importante considerar o impacto
+              na performance e no uso de memória, já que chamadas recursivas
+              podem levar a um consumo maior de recursos do sistema. Em alguns
+              casos, uma abordagem iterativa pode ser mais eficiente em termos
+              de memória.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 - Emanuel Nogueira</p>
+    </footer>
+  </body>
+</html>

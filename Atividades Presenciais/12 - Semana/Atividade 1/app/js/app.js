@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var funcionario_1 = require("./funcionario");
+var produto_1 = require("./produto");
+var produto1 = new produto_1.Produto(1, "Notebook", 1500.00, 10);
+var funcionario1 = new funcionario_1.Funcionario(101, "Ana Silva", 5001, "Desenvolvedora");
+var funcionario2 = new funcionario_1.Funcionario(102, "Carlos Souza");
+console.log(produto1.detalhar());
+console.log(funcionario1.detalhar());
+console.log(funcionario2.detalhar());

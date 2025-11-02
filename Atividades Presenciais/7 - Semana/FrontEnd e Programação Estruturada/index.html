@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O que são Matrizes?</title>
+
+    <style>
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .videos_container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .videos_container iframe,
+        .videos_container video {
+            width: 560px;
+            height: 315px;
+        }
+
+
+        #div_valores_e_indices {
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        #tabela_valores_e_indices {
+            border-collapse: collapse;
+        }
+
+        #tabela_valores_e_indices td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+    <script>
+
+        let listaValores = [];
+
+        function getValue(field) {
+            return document.getElementById(field).value;
+        }
+
+        function setValue(field, value) {
+            document.getElementById(field).innerHTML = value;
+        }
+
+        function clearInput(field) {
+            document.getElementById(field).value = "";
+        }
+
+        function addNumeroNaLista() {
+            let numero = Number(getValue("listaInput"));
+            if (numero !== 0) {
+                listaValores.push(numero);
+                clearInput("listaInput");
+            } else {
+                addNumeroButton.style.display = "none";
+                textoDigitouZero.style.display = "inline";
+            }
+
+            console.log(listaValores);
+        }
+
+        function desenharTabela() {
+            let valoresHTML = "<td><b>Valores</b></td>";
+            let indicesHTML = "<td><b>Índices</b></td>";
+
+            let maisRecorrente = listaValores[0];
+            let maiorCount = 0;
+
+            for (let i = 0; i < listaValores.length; i++) {
+                let numeroAtual = listaValores[i];
+                let count = 0;
+
+                for (let j = 0; j < listaValores.length; j++) {
+                    if (listaValores[j] === numeroAtual) {
+                        count++;
+                    }
+                }
+
+                if (count > maiorCount) {
+                    maiorCount = count;
+                    maisRecorrente = numeroAtual;
+                }
+            }
+
+            for (let i = 0; i < listaValores.length; i++) {
+                valoresHTML += `<td>${listaValores[i]}</td>`;
+
+                if (listaValores[i] === maisRecorrente) {
+                    indicesHTML += `<td style="color: red; font-weight: bold;">${i}</td>`;
+                } else {
+                    indicesHTML += `<td>${i}</td>`;
+                }
+            }
+
+            setValue("valores_row", valoresHTML);
+            setValue("indices_row", indicesHTML);
+            setValue("valorMaisRecorrente", `Valor mais recorrente: ${maisRecorrente}`);
+
+            div_valores_e_indices.style.display = "block";
+        }
+
+        let matrizAtual = [];
+
+        function gerarMatriz() {
+            let linhas = Number(getValue("numLinhas"));
+            let colunas = Number(getValue("numColunas"));
+
+            matrizAtual = [];
+            for (let i = 0; i < linhas; i++) {
+                let linha = [];
+                for (let j = 0; j < colunas; j++) {
+                    linha.push(Math.floor(Math.random() * 10));
+                }
+                matrizAtual.push(linha);
+            }
+
+            let tabelaHTML = "<table id='tabelaMatriz' style='border-collapse: collapse; margin: 10px auto;'>";
+            for (let i = 0; i < linhas; i++) {
+                tabelaHTML += "<tr>";
+                for (let j = 0; j < colunas; j++) {
+                    tabelaHTML += `<td style='border: 1px solid black; padding: 10px; text-align: center; width: 40px;'>${matrizAtual[i][j]}</td>`;
+                }
+                tabelaHTML += "</tr>";
+            }
+            tabelaHTML += "</table>";
+
+            setValue("matrizContainer", tabelaHTML);
+            setValue("resultadoSoma", "");
+
+            document.getElementById("linhaSoma").max = linhas;
+        }
+
+        function somarLinha() {
+            let linhaSelecionada = Number(getValue("linhaSoma")) - 1;
+
+            if (!matrizAtual || matrizAtual.length === 0) {
+                setValue("resultadoSoma", "Gere uma matriz primeiro!");
+                return;
+            }
+
+            if (linhaSelecionada < 0 || linhaSelecionada >= matrizAtual.length) {
+                setValue("resultadoSoma", `Linha ${linhaSelecionada + 1} está fora da dimensão da matriz.`);
+                return;
+            }
+
+            let soma = 0;
+            for (let j = 0; j < matrizAtual[linhaSelecionada].length; j++) {
+                soma += matrizAtual[linhaSelecionada][j];
+            }
+
+            let tabela = document.getElementById("tabelaMatriz");
+            if (tabela) {
+                let todasLinhas = tabela.getElementsByTagName("tr");
+                for (let i = 0; i < todasLinhas.length; i++) {
+                    todasLinhas[i].style.backgroundColor = "";
+                    todasLinhas[i].style.color = "";
+                }
+
+                todasLinhas[linhaSelecionada].style.backgroundColor = "red";
+                todasLinhas[linhaSelecionada].style.color = "white";
+            } 
+            setValue("resultadoSoma", `Soma da linha ${linhaSelecionada + 1}: ${soma}`);
+        }
+
+
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <h1>Matrizes</h1>
+
+    <hr>
+
+    <p>Matrizes são estruturas de dados bidimensionais, organizadas em linhas e colunas, que permitem armazenar e
+        manipular conjuntos de valores de forma eficiente. Elas são amplamente utilizadas em programação para
+        representar tabelas, imagens, mapas e diversos outros tipos de informações que exigem organização em duas
+        dimensões.</p>
+
+    <div id="audio_div">
+        Clique no botão de play para ouvir uma breve explicação sobre matrizes.
+        <br>
+        <audio controls loop style="margin-top: 10px;">
+            <source src="audio.mp3" type="audio/mpeg">
+            O seu navegador não suporta áudio.
+        </audio>
+    </div>
+
+    <div id="videos_div">
+        <p style="margin: 20px;">Assista aos dois vídeos abaixo sobre matrizes:</p>
+        <span class="videos_container">
+            <iframe src="https://www.youtube.com/embed/HNpSOOhtqkA?si=f3CSHgQrTgYgs8l0" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <video src="video.mp4" poster="thumbnail.jpg" controls></video>
+        </span>
+    </div>
+
+    <hr>
+
+    <section id="maisRecorrente">
+
+        <h2>Descobrir número mais recorrente em uma lista.</h2>
+
+        <p>Digite aqui sua lista de números um por um, para finalizar a inserção na lista, digite 0:
+            <input type="number" id="listaInput" />
+            <button type="button" id="addNumeroButton" onclick="addNumeroNaLista()">Adicionar Número</button>
+            <span id="textoDigitouZero" style="display: none;">Você não pode mais digitar nenhum número, pois o último
+                digitado foi 0.</span>
+        </p>
+
+        <p>Clique neste botão para descobrir o número mais recorrente na lista inserida:
+            <button type="button" onclick="desenharTabela()">Mais recorrente</button>
+        </p>
+
+        <div id="div_valores_e_indices">
+
+            <table id="tabela_valores_e_indices">
+                <tr id="valores_row">
+                    <td><b>Valores</b></td>
+                </tr>
+                <tr id="indices_row">
+                    <td><b>Índices</b></td>
+                </tr>
+            </table>
+
+            <p id="valorMaisRecorrente"></p>
+
+        </div>
+
+    </section>
+
+
+    <hr>
+
+    <section id="exercicio3">
+
+        <h2>Matriz e Soma de Linha</h2>
+        <p>Insira os valor do número de linhas e colunas para gerar uma matriz aleatória.</p>
+        <p>Informe as dimensões da matriz:</p>
+        <label>Linhas: <input type="number" id="numLinhas" min="1" max="10"></label>
+        <label>Colunas: <input type="number" id="numColunas" min="1" max="10"></label>
+        <button type="button" onclick="gerarMatriz()">Gerar Matriz</button>
+
+        <br><br>
+
+        <div id="matrizContainer" style="margin-top: 20px;"></div>
+        <div id="resultadoSoma" style="margin-top: 10px; font-weight: bold;"></div>
+
+        <p>Linha para somar (começando do 1):
+            <input type="number" id="linhaSoma" min="1">
+            <button type="button" onclick="somarLinha()">Somar</button>
+        </p>
+
+    </section>
+
+</body>
+
+</html>

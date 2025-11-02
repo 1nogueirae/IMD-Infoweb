@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Semana 6</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <h1>Site Multifuncional</h1>
+    <hr>
+    <p>Selecione uma opção abaixo para realizar uma tarefa com o número digitado.</p>
+    <form action="">
+        <select name="opcoes" id="opcoes">
+            <option value="">Selecione uma opção</option>
+            <option value="negativo-positivo">Negativo ou Positivo</option>
+            <option value="soma-zero">Soma do zero</option>
+            <option value="ddd">DDD</option>
+            <option value="soma-digitos">Soma dígitos</option>
+            <option value="piramide">Pirâmide</option>
+        </select>
+        <input type="number" id="numberInput" placeholder="Digite um número">
+        <button type="button" onclick="executeOption()">Confirmar</button>
+    </form>
+
+    <hr>
+
+    <section class="resultado">
+        <h2>Resultado:</h2>
+        <p id="saida"></p>
+    </section>
+
+    
+
+    <section class="piramide-container">
+        <div class="level" id="level1"></div>
+        <div class="level" id="level2"></div>
+        <div class="level" id="level3"></div>
+        <div class="level" id="level4"></div>
+        <div class="level" id="level5"></div>
+    </section>
+
+</body>
+
+</html>
