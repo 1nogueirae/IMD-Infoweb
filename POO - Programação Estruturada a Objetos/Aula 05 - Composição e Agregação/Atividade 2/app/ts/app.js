@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const computador_1 = require("./computador/computador");
+const artista_1 = require("./artista/artista");
+let computador = new computador_1.Computador();
+computador.armazenamento.tipo = "SSD";
+computador.armazenamento.capacidadeGB = 512;
+computador.cpu.modelo = "Intel Core i7";
+computador.cpu.velocidadeGHz = 3.6;
+computador.ram.capacidadeGB = 16;
+computador.exibirInformacoes();
+console.log("\n");
+let artista = new artista_1.Artista();
+artista.nome.nome = "Kevin Parker";
+artista.nacionalidade.nacionalidade = "Australiano";
+artista.dataNascimento.dataNascimento = "20/01/1986";
+artista.exibirInformacoes();
