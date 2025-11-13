@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "outDir": "js", // pasta de saída dos arquivos transpilados
+        "noEmitOnError": true // não gerar arquivos se houver erros
+    },
+    "include": [
+        "ts/**/*" // incluir todos os arquivos na pasta ts
+    ],
+    "exclude": [
+        "js"
+    ]
+}
