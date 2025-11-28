@@ -1,0 +1,17 @@
+# Exercício 1
+
+Crie 2 enums com, no mínimo, 3 valores distintos cada.
+Crie uma classe <A> que tenha 1 atributo do tipo string e 2 outros atributos que sejam dos tipos dos enums criados anteriormente (dê a essa classe um nome que faça sentido).
+Crie uma classe <B> que, usando Generics, permite você armazenar uma lista do tipo que desejar e também tenha um método para adicionar elementos na lista e outro que mostra os todos os elementos da lista (dê a essa classe um nome que faça sentido).
+Usando os tipos de classes criadas nas etapas 2 e 3 desta atividade, crie 2 instancias da classe <A>.
+Crie uma a instância de objeto da classe <B> de forma que seja possível adicionar as instancia de  <A> na lista que existe em <B>.
+    Exemplo: var b = new B<A>();
+    b.adicionar(a1);
+    b.adicionar(a1);
+    b.exibirLista();
+
+# Exercício 2
+
+Neste laboratório iremos dar continuidade ao nosso contato com a biblioteca jQuery, a mais popular biblioteca do Javascript. O jQuery é uma biblioteca de funções em JavaScript que interage com o HTML, facilitando e simplificando os scripts que são interpretados no navegador do lado do cliente.
+
+Implemente uma lógica para, exibir o nome e data de lançamento dos itens da lista de albuns da cantora Taylor Swift. Ao clicar em cada um dos itens na lista, mostre (show) ou esconda (hide) sua respectiva lista de músicas. Por exemplo, ao se clicar em “Primeiro Album”, o a lista de músicas deste album deve ser exibida. Caso clique novamente, ele deve sumir. Faça isso de forma otimizada, sem que precise repetir todo o código para cada álbum.
