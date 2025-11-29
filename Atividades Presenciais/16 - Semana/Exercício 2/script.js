@@ -1,45 +1,55 @@
-$(function () {
+async function consumirApi() {
     const urlAlbums = "https://taylor-swift-api.sarbo.workers.dev/albums";
 
-    $.get(urlAlbums, function (albums) {
-        $.each(albums, function (_i, album) {
-            const html = `
-                        <div class="album-item">
-                        <h3 class="album-title" data-id="${album.album_id}" style="cursor:pointer">${album.title}</h3>
-                        <small>${album.release_date}</small>
-                        <ul class="track-list" style="display:none"></ul>
-                        </div>`;
-            $('#discografia').append(html);
-        });
-    }).fail(function () {
-        console.log(`Falha ao carregar álbuns`);
-    });
+    try {
+        const resposta = await fetch(urlAlbums);
 
-    $('#discografia').on('click', 'h3.album-title', function () {
-        const id = $(this).data('id');
-        const $ul = $(this).siblings('ul.track-list');
-
-        if ($ul.children().length) {
-            $ul.slideToggle(150);
-            return;
+        if (!resposta.ok) {
+            throw new Error("Erro na resposta da API: " + resposta.status);
         }
 
-        $ul.show().html(`<li>Carregando...</li>`);
-        $.get(`https://taylor-swift-api.sarbo.workers.dev/albums/${id}`, function (data) {
-            $ul.empty();
-            const tracks = Array.isArray(data) ? data : (Array.isArray(data.tracks) ? data.tracks : []);
-            if (!tracks.length) {
-                $ul.append(`<li>Nenhuma música encontrada</li>`);
-                return;
-            }
-            tracks.forEach(function (track, i) {
-                const numero = i + 1;
-                const titulo = track.title || '(sem título)';
-                $ul.append(`<li>${numero}. ${titulo}</li>`);
-            });
-        }).fail(function () {
-            $ul.html(`<li>Erro ao carregar músicas</li>`);
+        const dados = await resposta.json();
+        return dados;
+
+    } catch (error) {
+        console.error("Erro ao buscar os álbuns:", error);
+    }
+
+};
+
+function drawCards() {
+    $(async () => {
+        const albums = await consumirApi();
+        if (!Array.isArray(albums)) return;
+
+        const $container = $("#discografia");
+
+        albums.forEach(album => {
+            const $card = $(`
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4 placeholder-img">
+                            <img src="..." class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">${album.title}</h5>
+                                <p class="card-release-date">${formatDate(album.release_date)}</p> 
+                                <button type="button" class="btn btn-primary">Listar músicas</button>   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `);
+            $container.append($card);
         });
     });
-});
+}
 
+drawCards();
+
+function formatDate(dateString) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const date = new Date(dateString);
+    return date.toLocaleDateString('pt-BR', options);
+}
