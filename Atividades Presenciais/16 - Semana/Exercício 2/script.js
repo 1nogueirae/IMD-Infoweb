@@ -37,49 +37,47 @@ async function consumirApi_musicas(albumID) {
     } catch (error) {
         console.error("Erro ao buscar as músicas:", error);
     }
-
-
 }
 
-
 async function drawAlbums() {
-    let albums = await consumirApi_albuns();
+    const albums = await consumirApi_albuns();
+
+    const $row = $('<div class="row g-3"></div>');
 
     albums.forEach(album => {
-        $containerAlbuns.append(`
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-8">
-                        <div class="card-body" data-id="${album.album_id}">
-                            <h5 class="card-title">${album.title}</h5>
-                            <p class="card-release-date">${album.release_date}</p>
-                            <button type="button" class="btn btn-primary listar-musica">Listar músicas</button>
-                        </div>
+        const $col = $(`
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card h-100">
+                    <div class="card-body" data-id="${album.album_id}">
+                        <h5 class="card-title">${album.title}</h5>
+                        <p class="card-release-date mb-3">${album.release_date}</p>
+                        <button type="button" class="btn btn-primary listar-musica w-100">Listar músicas</button>
                     </div>
                 </div>
             </div>
         `);
+        $row.append($col);
     });
+
+    $containerAlbuns.empty().append($row);
 }
 
 
 async function drawSongs(albumID, albumTitle) {
-    console.log(`Desenhando músicas do álbum ${albumID}`);
+    const dadosMusicas = await consumirApi_musicas(albumID);
 
-    let dadosMusicas = await consumirApi_musicas(albumID);
+    $containerMusicas.empty().append(`
+        <h3 class="mb-2">Músicas do álbum: ${albumTitle}</h3>
+        <ul class="list-group" id="tracks-list"></ul>
+    `);
 
-    console.log(dadosMusicas);
-
-    $containerMusicas.empty();
-    $containerMusicas.append(`<h3>Músicas do álbum: ${albumTitle}</h3>`);
+    const $list = $("#tracks-list");
     dadosMusicas.forEach((musica, index) => {
-        $containerMusicas.append(`<li>
-            <span>${index + 1} - ${musica.title}</span>
-            </li>`);
+        $list.append(`
+            <li class="list-group-item">${index + 1}. ${musica.title}</li>
+        `);
     });
-
 }
-
 drawAlbums();
 
 $containerAlbuns.on("click", ".listar-musica", function () {
