@@ -1,4 +1,7 @@
-async function consumirApi() {
+const $containerAlbuns = $("#lista-albuns");
+const $containerMusicas = $("#lista-musicas");
+
+async function consumirApi_albuns() {
     const urlAlbums = "https://taylor-swift-api.sarbo.workers.dev/albums";
 
     try {
@@ -8,8 +11,9 @@ async function consumirApi() {
             throw new Error("Erro na resposta da API: " + resposta.status);
         }
 
-        const dados = await resposta.json();
-        return dados;
+        const albums = await resposta.json();
+
+        return albums;
 
     } catch (error) {
         console.error("Erro ao buscar os álbuns:", error);
@@ -17,39 +21,69 @@ async function consumirApi() {
 
 };
 
-function drawCards() {
-    $(async () => {
-        const albums = await consumirApi();
-        if (!Array.isArray(albums)) return;
+async function consumirApi_musicas(albumID) {
 
-        const $container = $("#discografia");
+    const url = `https://taylor-swift-api.sarbo.workers.dev/albums/${albumID}`;
 
-        albums.forEach(album => {
-            const $card = $(`
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4 placeholder-img">
-                            <img src="..." class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">${album.title}</h5>
-                                <p class="card-release-date">${formatDate(album.release_date)}</p> 
-                                <button type="button" class="btn btn-primary">Listar músicas</button>   
-                            </div>
+    try {
+        const resposta = await fetch(url);
+
+        if (!resposta.ok) {
+            throw new Error("Erro na resposta da API: " + resposta.status);
+        }
+
+        const songs = await resposta.json();
+        return songs;
+    } catch (error) {
+        console.error("Erro ao buscar as músicas:", error);
+    }
+
+
+}
+
+
+async function drawAlbums() {
+    let albums = await consumirApi_albuns();
+
+    albums.forEach(album => {
+        $containerAlbuns.append(`
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-8">
+                        <div class="card-body" data-id="${album.album_id}">
+                            <h5 class="card-title">${album.title}</h5>
+                            <p class="card-release-date">${album.release_date}</p>
+                            <button type="button" class="btn btn-primary listar-musica">Listar músicas</button>
                         </div>
                     </div>
                 </div>
-            `);
-            $container.append($card);
-        });
+            </div>
+        `);
     });
 }
 
-drawCards();
 
-function formatDate(dateString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    const date = new Date(dateString);
-    return date.toLocaleDateString('pt-BR', options);
+async function drawSongs(albumID, albumTitle) {
+    console.log(`Desenhando músicas do álbum ${albumID}`);
+
+    let dadosMusicas = await consumirApi_musicas(albumID);
+
+    console.log(dadosMusicas);
+
+    $containerMusicas.empty();
+    $containerMusicas.append(`<h3>Músicas do álbum: ${albumTitle}</h3>`);
+    dadosMusicas.forEach((musica, index) => {
+        $containerMusicas.append(`<li>
+            <span>${index + 1} - ${musica.title}</span>
+            </li>`);
+    });
+
 }
+
+drawAlbums();
+
+$containerAlbuns.on("click", ".listar-musica", function () {
+    const albumId = $(this).closest('.card-body').data('id');
+    const albumTitle = $(this).closest('.card-body').find('.card-title').text();
+    drawSongs(albumId, albumTitle);
+});
