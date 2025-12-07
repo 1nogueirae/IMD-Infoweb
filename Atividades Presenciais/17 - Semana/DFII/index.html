@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site da Taylor Swift</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="sobre">
+            <h1 class="text-center">Site da Taylor Swift</h1>
+            <p class="text-center">Bem-vindo ao site dedicado à cantora Taylor Swift! Aqui você pode explorar seus
+                álbuns e músicas favoritas.</p>
+
+            <div class="card mb-3">
+                <img src="https://www.realsimple.com/thmb/aBWFd3jS8cayxL3Q67ADgTDw2k8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/taylor-swift-engagement-ring-manicure-GettyImages-2197332753-6a60ee7d70c94566a9c07a77d49e025a.jpg"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Quem é Taylor Swift?</h5>
+                    <p class="card-text">Taylor Swift é uma cantora e compositora americana, uma das artistas
+                        musicais mais vendidas de
+                        todos os tempos e um ícone cultural global
+                        . Conhecida por suas composições narrativas e autobiográficas, ela fez uma transição notável
+                        da
+                        música country para o pop e, mais recentemente, para o indie folk e electropop.ead-in to
+                        additional contenTaylor Swift é uma cantora e compositora americana, uma das artistas
+                        musicais mais vendidas de
+                        todos os tempos e um ícone cultural global
+                        . Conhecida por suas composições narrativas e autobiográficas, ela fez uma transição notável
+                        da
+                        música country para o pop e, mais recentemente, para o indie folk e electropop.</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="yotube-video">
+            <div class="container mt-5 mb-5">
+            </div>
+        </div>
+
+        <div id="albums">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h3 class="text-center">Lista dos Álbuns da Taylor Swift</h3>
+                    </div>
+                    <div class="col-sm-4">
+                        <button class="btn btn-primary" onclick="toggleAlbums()">Ver Álbuns</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="container text-center" id="albums-container">
+                <div class="row">
+                </div>
+            </div>
+        </div>
+
+        <div id="songs-container">
+            <h3 class="text-center" id="h-songs-container"> Lista de Músicas do Álbum Selecionado</h3>
+            <ul class="list-group" id="list-group">
+                <li class="list-group-item">Você ainda não selecionou nenhum álbum.</li>
+            </ul>
+        </div>
+
+        <div id="lyrics-container">
+            <h3 class="text-center">Letra da Música</h3>
+            <div class="lyrics-content">
+                <p>Selecione uma música para ver a letra.</p>
+
+            </div>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+</body>
+
+</html>
