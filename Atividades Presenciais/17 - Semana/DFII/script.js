@@ -88,7 +88,7 @@ async function listSongs(albumTitle, albumId) {
     songsDiv.empty();
 
     for (let i = 0; i < songs.length; i++) {
-        songsDiv.append(`<li class="list-group-item">${i + 1}. ${songs[i].title}<button class="btn btn-secondary" onclick="toggleLyrics(${songs[i].song_id})">Letra da música</button></li>`);
+        songsDiv.append(`<li class="list-group-item">${i + 1}. ${songs[i].title}<button class="btn btn-secondary" onclick="toggleLyrics(${songs[i].song_id})">Letra</button></li>`);
     }
 
     $("#songs-container").show(2000);

@@ -1,0 +1,11 @@
+#list-group,
+#lyrics-container {
+    max-height: 380px;
+    overflow-y: auto;
+}
+
+/* Limita e permite rolagem no texto de apresentação */
+.about-card-body {
+    max-height: 240px;
+    overflow-y: auto;
+}
