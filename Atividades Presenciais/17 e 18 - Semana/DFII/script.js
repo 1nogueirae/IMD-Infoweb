@@ -50,7 +50,7 @@ function loadVideoThumbnails() {
         videosContainer.append(videoCard);
     });
 
-    $(".yotube-video .container").append(videosContainer);
+    $(".youtube-video .container").append(videosContainer);
 
     $(".video-thumbnail").mouseenter(function () {
         $(this).css("opacity", "0.7");
@@ -88,7 +88,12 @@ async function listSongs(albumTitle, albumId) {
     songsDiv.empty();
 
     for (let i = 0; i < songs.length; i++) {
-        songsDiv.append(`<li class="list-group-item">${i + 1}. ${songs[i].title}<button class="btn btn-secondary" onclick="toggleLyrics(${songs[i].song_id})">Letra da música</button></li>`);
+        songsDiv.append(`
+            <li class="list-group-item">
+            
+            ${i + 1}. ${songs[i].title}
+            <button class="btn btn-secondary" onclick="toggleLyrics(${songs[i].song_id})">Letra da música</button>
+            </li>`);
     }
 
     $("#songs-container").show(2000);

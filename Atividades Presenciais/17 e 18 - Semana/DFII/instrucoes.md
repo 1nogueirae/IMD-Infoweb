@@ -28,3 +28,12 @@ o Adicione elemento img ao link com prepend().
 Utilize a api <https://taylor-swift-api.sarbo.workers.dev> para pegar os nomes das músicas e as letras.
 
 Documentação da api <https://github.com/sarbor/taylor_swift_api>
+
+
+Neste laboratório iremos implementar em nosso site uma lista de músicas favoritas, utilizando HTML, CSS e Javascript.
+
+Para desenvolver as atividades deste roteiro, utilize o editor de código de sua preferência.
+
+O HTML e o CSS estão prontos, mas precisamos de código Javascript para tornar a aplicação funcional. Como você pode ver, quando abrimos nossa página a funcionalidade de deletar ou de adicionar músicas a lista não existe. Implemente as funcionalidades de adicionar e remover músicas na nossa aplicação web. Fique a vontade em utilizar JavaScript nativo ou utilizar também a biblioteca jQuery (nesse caso, deve-se adicionar a dependência).
+
+Não esqueça de colocar um link ou botão para acessar a página da lista de músicas favoritas.

@@ -1,12 +1,19 @@
 {
+  "name": "AULA_14",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "servidor": "live-server --open=app",
+    "compilar": "tsc -w",
+    "start": "concurrently \"npm run compilar\" \"npm run servidor\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.4.0",
-    "live-server": "^1.2.2",
-    "typescript": "^5.3.3"
-  },
-  "scripts": {
-    "compilar": "tsc -w",
-    "servidor": "cd app && live-server",
-    "start": "concurrently \"npm run compilar\" \"npm run servidor\""
+    "live-server": "^1.2.1"
   }
 }

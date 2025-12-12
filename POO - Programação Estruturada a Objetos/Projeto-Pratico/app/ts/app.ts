@@ -1,8 +1,9 @@
-import { Livro } from "./models/livro.js";
+// import { Livro } from "./models/livro";
+// let livro = new Livro("Meu livro","Emerson", "UFRN",2021);
+// console.log(livro);
 
-let livro = new Livro("1984", "George Orwell", "Secker & Warburg", 1949);
+import { LivroController } from "./controllers/livrocontroller";
 
-console.log(`Título: ${livro.titulo}`);
-console.log(`Autor: ${livro.autor}`);
-console.log(`Editora: ${livro.editora}`);
-console.log(`Ano: ${livro.ano}`);
+let controller = new LivroController();
+
+document.querySelector('.form').addEventListener('submit',controller.cadastrar.bind(controller));
